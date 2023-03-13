@@ -5,16 +5,25 @@
   <link>www.blog.benduffield-harding.com/</link>
   <description>Ben Duffield-Harding's website</description>
   <image>
-      <url>http://vitalik.ca/images/icon.png</url>
+      <url>N/A</url>
       <title>Ben Duffield-Harding's website</title>
       <link>www.blog.benduffield-harding.com/</link>
   </image>
 
 <item>
-<title>How I Made This Website</title>
-<link>www.blog.benduffield-harding.com/./posts/2023/10/24/HIMTW.html</link>
-<guid>www.blog.benduffield-harding.com/./posts/2023/10/24/HIMTW.html</guid>
-<pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+<title>Hello</title>
+<link>www.blog.benduffield-harding.com/./posts/2023/03/13/hello.html</link>
+<guid>www.blog.benduffield-harding.com/./posts/2023/03/13/hello.html</guid>
+<pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
+<description></description>
+</item>
+
+
+<item>
+<title>Amazon Interview Question</title>
+<link>www.blog.benduffield-harding.com/./posts/2023/03/13/130323.html</link>
+<guid>www.blog.benduffield-harding.com/./posts/2023/03/13/130323.html</guid>
+<pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
 <description></description>
 </item>
 
