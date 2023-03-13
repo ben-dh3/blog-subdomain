@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+<channel>
+  <title>Ben Duffield-Harding's website</title>
+  <link>www.blog.benduffield-harding.com/</link>
+  <description>Ben Duffield-Harding's website</description>
+  <image>
+      <url>http://vitalik.ca/images/icon.png</url>
+      <title>Ben Duffield-Harding's website</title>
+      <link>www.blog.benduffield-harding.com/</link>
+  </image>
+
+<item>
+<title>How I Made This Website</title>
+<link>www.blog.benduffield-harding.com/./posts/2023/10/24/HIMTW.html</link>
+<guid>www.blog.benduffield-harding.com/./posts/2023/10/24/HIMTW.html</guid>
+<pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+<description></description>
+</item>
+
+</channel>
+</rss>
