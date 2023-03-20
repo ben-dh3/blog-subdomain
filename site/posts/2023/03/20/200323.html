@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<style>
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1c1c1c;
+        color: white;
+    }
+    .markdown-body table tr {
+        background-color: #1c1c1c;
+    }
+    .markdown-body table tr:nth-child(2n) {
+        background-color: black;
+    }
+}
+</style>
+
+
+
+<link rel="alternate" type="application/rss+xml" href="../../../../feed.xml" title="Codingame Question 5">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/common-vendor.b8ecfc406ac0b5f77a26.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fretboard.f32f2a8d5293869f0195.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/pretty.0ae3265014f89d9850bf.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/pretty-vendor.83ac49e057c3eac4fce3.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/global.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/misc.css">
+
+<script type="text/x-mathjax-config">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global',
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="../../../../scripts/tex-svg.js">
+</script>
+
+<style>
+</style>
+
+<div id="doc" class="container-fluid markdown-body comment-enabled" data-hard-breaks="true">
+
+<div id="color-mode-switch">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+  </svg>
+  <input type="checkbox" id="switch" />
+  <label for="switch">Dark Mode Toggle</label>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+  </svg>
+</div>
+
+<script type="text/javascript">
+  // Update root html class to set CSS colors
+  const toggleDarkMode = () => {
+    const root = document.querySelector('html');
+    root.classList.toggle('dark');
+  }
+
+  // Update local storage value for colorScheme
+  const toggleColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    if (colorScheme === 'light') localStorage.setItem('colorScheme', 'dark');
+    else localStorage.setItem('colorScheme', 'light');
+  }
+
+  // Set toggle input handler
+  const toggle = document.querySelector('#color-mode-switch input[type="checkbox"]');
+  if (toggle) toggle.onclick = () => {
+    toggleDarkMode();
+    toggleColorScheme();
+  }
+
+  // Check for color scheme on init
+  const checkColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    // Default to light for first view
+    if (colorScheme === null || colorScheme === undefined) localStorage.setItem('colorScheme', 'light');
+    // If previously saved to dark, toggle switch and update colors
+    if (colorScheme === 'dark') {
+      toggle.checked = true;
+      toggleDarkMode();
+    }
+  }
+  checkColorScheme();
+</script>
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Codingame Question 5" />
+<meta name="twitter:image" content="N/A" />
+
+
+<br>
+<h1 style="margin-bottom:7px"> Codingame Question 5 </h1>
+<small style="float:left; color: #888"> 2023 Mar 20 </small>
+<small style="float:right; color: #888"><a href="../../../../index.html">See all posts</a></small>
+<br> <br> <br>
+<title> Codingame Question 5 </title>
+
+<h1 id="the-following-is-a-question-from-codingame-clash-of-code">The following is a question from codingame, clash of code:</h1>
+<h3 id="what-is-the-most-common-letter-used-in-a-given-string-the-string-only-contains-lowercase-letters-and-spaces.">What is the most common letter used in a given string ? The string only contains lowercase letters and spaces.</h3>
+<h3 id="input">INPUT:</h3>
+<h3 id="words-a-string.">words, a string.</h3>
+<h3 id="output">OUTPUT:</h3>
+<h3 id="the-most-used-letter-in-words.">The most used letter in words.</h3>
+<h3 id="example">EXAMPLE:</h3>
+<h3 id="input-1">Input</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="st">&#39;always choose a lazy person to do a difficult job&#39;</span></span></code></pre></div>
+<h3 id="output-1">Output</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a> <span class="st">&#39;o&#39;</span></span></code></pre></div>
+<h1 id="break-it-down">break it down</h1>
+<h3 id="we-need-to-count-the-number-of-times-each-letter-appears-in-the-string-and-return-the-most-used-letter">- we need to count the number of times each letter appears in the string, and return the most used letter</h3>
+<h3 id="one-way-is-to-create-a-dictionary-and-store-the-letter-and-number-of-times-it-appears">- one way is to create a dictionary and store the letter and number of times it appears</h3>
+<h3 id="we-can-split-the-string-and-create-an-array-of-individual-characters">- we can split('') the string and create an array of individual characters</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">let</span> letters <span class="op">=</span> <span class="st">&quot;hello world&quot;</span><span class="op">.</span><span class="fu">split</span>(<span class="st">&#39;&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<h3 id="loop-through-the-characters-and-add-them-to-the-dictionary-and-check-if-a-letter-key-already-exists-you-cannot-an-undefined-value">- loop through the characters and add them to the dictionary, and check if a letter key already exists (you cannot += an undefined value)</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">let</span> dict <span class="op">=</span> {}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="cf">for</span>(<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;=</span> letters<span class="op">.</span><span class="at">length</span> <span class="dv">-1</span><span class="op">;</span> i<span class="op">++</span>){</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="cf">if</span>(letters[i] <span class="kw">in</span> dict){</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>        dict[letters[i]] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    }<span class="cf">else</span>{</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>        dict[letters[i]] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    }</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>}</span></code></pre></div>
+<h3 id="now-we-have-a-dictionary-of-the-letters-and-how-many-times-they-appear">- now we have a dictionary of the letters and how many times they appear</h3>
+<h3 id="we-can-sort-the-dictionary-by-the-keys-with-the-highest-value-with-object.keys">- we can sort the dictionary by the keys with the highest value with Object.keys()</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">let</span> order <span class="op">=</span> <span class="bu">Object</span><span class="op">.</span><span class="fu">keys</span>(dict)<span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="cf">if</span>(dict[a] <span class="op">&gt;</span> dict[b]){</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>        <span class="cf">return</span> <span class="dv">-1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    }</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="cf">if</span>(dict[a] <span class="op">&lt;</span> dict[b]){</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>    }<span class="cf">else</span>{</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>    }</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>})</span></code></pre></div>
+<h3 id="output-2">Output</h3>
+<p>```javascript console.log(order[0]) ‘l'</p>
+ </div> 
