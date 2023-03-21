@@ -62,6 +62,7 @@ MathJax = {
     <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
   </svg>
 </div>
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/e5e3e8e7b054fd433d5a143ab/9a2f2b29defc64798f535ae62.js");</script>
 """
 
 SUBSCRIBE = """
@@ -111,42 +112,6 @@ form.addEventListener('submit', (e) => {
     });
 });
 
-const express = require('express');
-const app = express();
-
-app.post('/subscribe', (req, res) => {
-  const email = req.body.email;
-
-  // do something with the email, like save it to a database or send a confirmation email
-
-  res.status(200).send('Subscription successful');
-});
-
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
-
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/my_database');
-
-const subscriberSchema = new mongoose.Schema({
-  email: String,
-});
-
-const Subscriber = mongoose.model('Subscriber', subscriberSchema);
-
-app.post('/subscribe', (req, res) => {
-  const email = req.body.email;
-
-  const subscriber = new Subscriber({ email });
-  subscriber.save((err) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Subscription failed');
-    } else {
-      res.status(200).send('Subscription successful');
-    }
-  });
-});
 
 </script>
 """
