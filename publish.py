@@ -64,6 +64,55 @@ MathJax = {
 </div>
 """
 
+SUBSCRIBE = """
+<form>
+  <label for="email">Email Address:</label>
+  <input type="email" id="email" name="email" required>
+  <button type="submit" id="subscribeBtn">Subscribe</button>
+</form>
+<script type = "text/javascript">
+
+const form = document.querySelector('form');
+const emailInput = document.querySelector('#email');
+const subscribeBtn = document.querySelector('#subscribeBtn')
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // prevent form from submitting
+
+  const email = emailInput.value;
+
+  // validate email using regex
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!regex.test(email)) {
+    alert('Please enter a valid email address');
+    return;
+  }
+
+  // send email to server to subscribe
+  // replace the URL with your own server endpoint
+  fetch('https://blog.benduffield-harding.com', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email }),
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert('You have been subscribed!');
+        emailInput.value = '';
+      } else {
+        alert('An error occurred. Please try again later.');
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      alert('An error occurred. Please try again later.');
+    });
+});
+
+</script>
+"""
 TOGGLE_COLOR_SCHEME_JS = """
 <script type="text/javascript">
   // Update root html class to set CSS colors
@@ -285,6 +334,7 @@ def make_toc(toc_items, global_config, all_categories, category=None):
         HEADER_TEMPLATE.replace('$root', root_path) +
         TOGGLE_COLOR_SCHEME_JS +
         make_twitter_card(title, global_config) +
+        SUBSCRIBE +
         TOC_TITLE_TEMPLATE.format(title) +
         make_categories_header(all_categories, root_path) +
         TOC_START +
