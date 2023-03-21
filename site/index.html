@@ -147,6 +147,43 @@ form.addEventListener('submit', (e) => {
     });
 });
 
+const express = require('express');
+const app = express();
+
+app.post('/subscribe', (req, res) => {
+  const email = req.body.email;
+
+  // do something with the email, like save it to a database or send a confirmation email
+
+  res.status(200).send('Subscription successful');
+});
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/my_database');
+
+const subscriberSchema = new mongoose.Schema({
+  email: String,
+});
+
+const Subscriber = mongoose.model('Subscriber', subscriberSchema);
+
+app.post('/subscribe', (req, res) => {
+  const email = req.body.email;
+
+  const subscriber = new Subscriber({ email });
+  subscriber.save((err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Subscription failed');
+    } else {
+      res.status(200).send('Subscription successful');
+    }
+  });
+});
+
 </script>
 
 
