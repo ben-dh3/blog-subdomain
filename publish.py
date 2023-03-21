@@ -90,7 +90,7 @@ form.addEventListener('submit', (e) => {
 
   // send email to server to subscribe
   // replace the URL with your own server endpoint
-  fetch('https://blog.benduffield-harding.com', {
+  fetch('https://blog.benduffield-harding.com/subscribe', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
