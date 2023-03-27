@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<style>
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1c1c1c;
+        color: white;
+    }
+    .markdown-body table tr {
+        background-color: #1c1c1c;
+    }
+    .markdown-body table tr:nth-child(2n) {
+        background-color: black;
+    }
+}
+</style>
+
+
+
+<link rel="alternate" type="application/rss+xml" href="../../../../feed.xml" title="Codingame Question 7">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/common-vendor.b8ecfc406ac0b5f77a26.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/fretboard.f32f2a8d5293869f0195.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/pretty.0ae3265014f89d9850bf.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/pretty-vendor.83ac49e057c3eac4fce3.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/global.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/misc.css">
+
+<script type="text/x-mathjax-config">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global',
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="../../../../scripts/tex-svg.js">
+</script>
+
+<style>
+</style>
+
+<div id="doc" class="container-fluid markdown-body comment-enabled" data-hard-breaks="true">
+
+<div id="color-mode-switch">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+  </svg>
+  <input type="checkbox" id="switch" />
+  <label for="switch">Dark Mode Toggle</label>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+  </svg>
+</div>
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/e5e3e8e7b054fd433d5a143ab/9a2f2b29defc64798f535ae62.js");</script>
+
+<script type="text/javascript">
+  // Update root html class to set CSS colors
+  const toggleDarkMode = () => {
+    const root = document.querySelector('html');
+    root.classList.toggle('dark');
+  }
+
+  // Update local storage value for colorScheme
+  const toggleColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    if (colorScheme === 'light') localStorage.setItem('colorScheme', 'dark');
+    else localStorage.setItem('colorScheme', 'light');
+  }
+
+  // Set toggle input handler
+  const toggle = document.querySelector('#color-mode-switch input[type="checkbox"]');
+  if (toggle) toggle.onclick = () => {
+    toggleDarkMode();
+    toggleColorScheme();
+  }
+
+  // Check for color scheme on init
+  const checkColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    // Default to light for first view
+    if (colorScheme === null || colorScheme === undefined) localStorage.setItem('colorScheme', 'light');
+    // If previously saved to dark, toggle switch and update colors
+    if (colorScheme === 'dark') {
+      toggle.checked = true;
+      toggleDarkMode();
+    }
+  }
+  checkColorScheme();
+</script>
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Codingame Question 7" />
+<meta name="twitter:image" content="N/A" />
+
+
+<br>
+<h1 style="margin-bottom:7px"> Codingame Question 7 </h1>
+<small style="float:left; color: #888"> 2023 Mar 27 </small>
+<small style="float:right; color: #888"><a href="../../../../index.html">See all posts</a></small>
+<br> <br> <br>
+<title> Codingame Question 7 </title>
+
+<h3 id="the-following-is-a-question-from-codingame-clash-of-code">The following is a question from codingame, clash of code:</h3>
+<h1 id="the-game-mode-is-reverse-you-do-not-have-access-to-the-statement.-you-have-to-guess-what-to-do-by-observing-the-following-set-of-tests">The game mode is REVERSE: You do not have access to the statement. You have to guess what to do by observing the following set of tests:</h1>
+<h3 id="example">EXAMPLE:</h3>
+<h3 id="input">Input</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="st">&quot;The _ dog barked.&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dv">1</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="st">&quot;brown&quot;</span></span></code></pre></div>
+<h3 id="output">Output</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="st">&quot;The brown dog barked.&quot;</span></span></code></pre></div>
+<h3 id="input-1">Input</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="st">&quot;The _ put on his red _.&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="dv">2</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="st">&quot;clown&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="st">&quot;nose&quot;</span></span></code></pre></div>
+<h3 id="output-1">Output</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="st">&quot;The clown put on his red nose.&quot;</span></span></code></pre></div>
+<h3 id="break-it-down">Break it down</h3>
+<ul>
+<li>we need to replace the '_' in the order they appear, with the words in the order they appear, can use a ‘for' loop to iterate through each of them.</li>
+<li>first we will split the word input on each new line to separate the words</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">let</span> statement <span class="op">=</span> <span class="st">&quot;The _ put on his red _.&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="kw">let</span> n <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="kw">let</span> word <span class="op">=</span> <span class="st">&quot;clown</span><span class="sc">\n</span><span class="st">nose&quot;</span><span class="op">.</span><span class="fu">split</span>(<span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<ul>
+<li>then we can loop through each input in order</li>
+<li>when we find a '_' we can update statement with the new word in its place</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="cf">for</span>(<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;=</span> word<span class="op">.</span><span class="at">length</span> <span class="dv">-1</span><span class="op">;</span> i<span class="op">++</span>){</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    <span class="cf">for</span>(<span class="kw">let</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;=</span> statement<span class="op">.</span><span class="at">length</span> <span class="dv">-1</span><span class="op">;</span> j<span class="op">++</span>){</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    <span class="cf">if</span>(statement[j] <span class="op">===</span> <span class="st">&#39;_&#39;</span>){</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    statement <span class="op">=</span> statement<span class="op">.</span><span class="fu">substring</span>(<span class="dv">0</span><span class="op">,</span>j) <span class="op">+</span> word[i] <span class="op">+</span> statement<span class="op">.</span><span class="fu">substring</span>(j<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    <span class="cf">break</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>}</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>}}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="cf">return</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(statement)</span></code></pre></div>
+<h3 id="output-2">Output</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="st">&quot;The clown put on his red nose.&quot;</span></span></code></pre></div>
+ </div> 
