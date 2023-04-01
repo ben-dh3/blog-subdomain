@@ -110,24 +110,4 @@ MathJax = {
 <br> <br> <br>
 <title> Codingame Question 3 </title>
 
-<p><b>The following is a question from codingame, clash of code:</p>
-<p>count the 1s in the 8 bits and multiply the resulting integer by 2</b></p>
-<p>Test 1 Input</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dv">00101110</span></span></code></pre></div>
-<p>Output:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="dv">8</span></span></code></pre></div>
-<p><b>Break it down</b></p>
-<p>//we can use a for loop to search through the input and find the 1s //if it's a 1 we can add it to a total //return total * 2</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">const</span> _byte <span class="op">=</span> <span class="dv">00101110</span><span class="op">;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">let</span> total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="cf">for</span>(<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;=</span> _byte<span class="op">.</span><span class="at">length</span> <span class="dv">-1</span><span class="op">;</span> i<span class="op">++</span>){</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="cf">if</span>(_byte[i] <span class="op">==</span> <span class="dv">1</span>){</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>        total <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    }</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>}</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(total <span class="op">*</span> <span class="dv">2</span>)<span class="op">;</span></span></code></pre></div>
-<p>Output:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="dv">8</span></span></code></pre></div>
  </div> 
