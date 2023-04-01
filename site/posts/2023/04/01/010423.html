@@ -20,7 +20,7 @@
 
 
 
-<link rel="alternate" type="application/rss+xml" href="../../../../feed.xml" title="Codingame Question 3">
+<link rel="alternate" type="application/rss+xml" href="../../../../feed.xml" title="Codingame Question 12">
 
 
 
@@ -99,35 +99,47 @@ MathJax = {
 </script>
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Codingame Question 3" />
+<meta name="twitter:title" content="Codingame Question 12" />
 <meta name="twitter:image" content="N/A" />
 
 
 <br>
-<h1 style="margin-bottom:7px"> Codingame Question 3 </h1>
-<small style="float:left; color: #888"> 2023 Mar 17 </small>
+<h1 style="margin-bottom:7px"> Codingame Question 12 </h1>
+<small style="float:left; color: #888"> 2023 Apr 01 </small>
 <small style="float:right; color: #888"><a href="../../../../index.html">See all posts</a></small>
 <br> <br> <br>
-<title> Codingame Question 3 </title>
+<title> Codingame Question 12 </title>
 
-<p><b>The following is a question from codingame, clash of code:</p>
-<p>count the 1s in the 8 bits and multiply the resulting integer by 2</b></p>
-<p>Test 1 Input</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dv">00101110</span></span></code></pre></div>
-<p>Output:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="dv">8</span></span></code></pre></div>
-<p><b>Break it down</b></p>
-<p>//we can use a for loop to search through the input and find the 1s //if it's a 1 we can add it to a total //return total * 2</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">const</span> _byte <span class="op">=</span> <span class="dv">00101110</span><span class="op">;</span></span>
+<h3 id="the-following-is-a-question-from-codingame-clash-of-code">The following is a question from codingame, clash of code:</h3>
+<h3 id="output-the-factorial-of-the-integer-n">Output the factorial of the integer N</h3>
+<h3 id="input">Input</h3>
+<h3 id="an-integer-n-to-convert.">An integer N to convert.</h3>
+<h3 id="output">Output</h3>
+<h3 id="the-factorial-of-n">The factorial of N</h3>
+<h3 id="constraints">Constraints</h3>
+<h3 id="n-100">-100 ≤ N ≤ 100</h3>
+<h3 id="example">Example</h3>
+<h3 id="input-1">Input</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dv">5</span></span></code></pre></div>
+<h3 id="output-1">Output</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="dv">120</span></span></code></pre></div>
+<h1 id="break-it-down">Break it down</h1>
+<ul>
+<li>the factorial of 5 is worked out by: 5 * 4 * 3 * 2 * 1 = 120</li>
+<li>we need a variable to store the factorial total</li>
+<li>and a ‘count' variable we can decrement</li>
+<li>we can use a while loop to multiply the total by the count, decrementing on each loop</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">const</span> N <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">let</span> total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="cf">for</span>(<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;=</span> _byte<span class="op">.</span><span class="at">length</span> <span class="dv">-1</span><span class="op">;</span> i<span class="op">++</span>){</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="cf">if</span>(_byte[i] <span class="op">==</span> <span class="dv">1</span>){</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>        total <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    }</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">let</span> factorial <span class="op">=</span> N</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="kw">let</span> count <span class="op">=</span> N<span class="dv">-1</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="cf">while</span>(count <span class="op">&gt;</span> <span class="dv">1</span>){</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    fac <span class="op">*=</span>count</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    count <span class="op">--</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>}</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(total <span class="op">*</span> <span class="dv">2</span>)<span class="op">;</span></span></code></pre></div>
-<p>Output:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="dv">8</span></span></code></pre></div>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(fac)<span class="op">;</span></span></code></pre></div>
+<h3 id="output-2">Output</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="dv">120</span></span></code></pre></div>
  </div> 

@@ -110,4 +110,49 @@ MathJax = {
 <br> <br> <br>
 <title> Codingame Question 8 </title>
 
+<h3 id="the-following-is-a-question-from-codingame-clash-of-code">The following is a question from codingame, clash of code:</h3>
+<h3 id="here-is-the-trick-to-check---without-a-calculator---if-a-number-is-divisible-by-7">Here is the trick to check - without a calculator - if a number is divisible by 7:</h3>
+<h3 id="example-number-541926">Example number = 541926</h3>
+<h3 id="remove-the-last-digit-k-6-from-the-number-which-gives-54192">1. Remove the last digit k (=6) from the number, which gives 54192</h3>
+<h3 id="subtract-2k-from-the-result-54192---26-54180">2. Subtract 2<em>k from the result: 54192 - 2</em>6 = 54180</h3>
+<h3 id="is-divisible-by-7-if-and-only-if-54180-is-divisible-by-7.-54180-is-still-a-large-number-so-we-repeat-the-process-until-we-get-a-number-where-we-can-easily-see-the-divisibility-by-7.">541926 is divisible by 7 if and only if 54180 is divisible by 7. 54180 is still a large number, so we repeat the process until we get a number, where we can easily see the divisibility by 7.</h3>
+<h3 id="section">541926, 54180, 5418, 525, 42</h3>
+<h3 id="we-conclude-541926-is-divisible-by-7-because-42-is-divisible-by-7.">We conclude: 541926 is divisible by 7, because 42 is divisible by 7.</h3>
+<h3 id="your-task-is-to-produce-for-a-given-input-this-sequence-of-numbers-and-output-the-first-number-in-this-sequence-which-is-70-or-less-because-we-can-then-surely-recognize-if-the-number-is-divisible-by-7.-then-add-a-yes-or-no-to-the-output-indicating-the-final-decision-about-the-divisiblity-by-seven.">Your task is to produce for a given input this sequence of numbers and output the first number in this sequence which is 70 or less (because we can then surely recognize, if the number is divisible by 7). Then add a YES or NO to the output, indicating the final decision about the divisiblity by seven.</h3>
+<h3 id="for-input-541926-the-output-is">For input 541926, the output is:</h3>
+<h3 id="yes">42 YES</h3>
+<h3 id="input">Input</h3>
+<h3 id="line-1-an-integer-n-to-be-examined">Line 1 An Integer n to be examined</h3>
+<h3 id="output">Output</h3>
+<h3 id="an-integer-k-70-and-seperated-by-a-space-either-yes-or-no-for-the-final-decision.">An Integer k &lt;= 70 and seperated by a space either YES or NO for the final decision.</h3>
+<h3 id="constraints">Constraints</h3>
+<h3 id="n-70">n &gt; 70</h3>
+<h3 id="example">EXAMPLE:</h3>
+<h3 id="input-1">Input</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dv">71</span></span></code></pre></div>
+<h3 id="output-1">Output</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="dv">5</span> <span class="st">&#39;NO&#39;</span></span></code></pre></div>
+<h1 id="break-it-down">Break it down</h1>
+<ul>
+<li>we need to apply the formula to a given number until it is less than 70, then check if it is divisible by 7 and return yes/no</li>
+<li>we can use a while loop to apply the formula while the number is greater than 70</li>
+<li>then find separate the last digit from the rest using substring</li>
+<li>when num &lt; 70 it exits the while loop and we can check if it's divisible by 7</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">let</span> num <span class="op">=</span> <span class="dv">541926</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="kw">let</span> str <span class="op">=</span> num<span class="op">.</span><span class="fu">toString</span>()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="cf">while</span>(num <span class="op">&gt;</span> <span class="dv">70</span>){</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="kw">let</span> newNum <span class="op">=</span> <span class="pp">parseInt</span>(str<span class="op">.</span><span class="fu">substring</span>(<span class="dv">0</span><span class="op">,</span> str<span class="op">.</span><span class="at">length</span><span class="dv">-1</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="kw">let</span> last <span class="op">=</span> <span class="pp">parseInt</span>(str[str<span class="op">.</span><span class="at">length</span><span class="dv">-1</span>]) <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    num <span class="op">=</span> newNum <span class="op">-</span> last</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    str <span class="op">=</span> num<span class="op">.</span><span class="fu">toString</span>()</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>}</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="cf">if</span>(num <span class="op">%</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">0</span>){</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>    <span class="cf">return</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(num <span class="op">+</span> <span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>}<span class="cf">else</span>{</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>    <span class="cf">return</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(num <span class="op">+</span> <span class="st">&quot;no&quot;</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>}</span></code></pre></div>
+<h1 id="output-2">Output</h1>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="dv">42</span> <span class="st">&quot;yes&quot;</span></span></code></pre></div>
  </div> 

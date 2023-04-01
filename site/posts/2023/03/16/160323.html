@@ -110,4 +110,35 @@ MathJax = {
 <br> <br> <br>
 <title> Codingame Question 2 </title>
 
+<p>The following is a question from codingame, clash of code:</p>
+<p>This game mode is reverse: you do not have access to the statement. You have to guess what to do by observing the tests:</p>
+<p>Test 1 Input</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dv">2</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dv">2</span></span></code></pre></div>
+<p>Output:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="st">&#39;OO&#39;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="st">&#39;OO&#39;</span></span></code></pre></div>
+<p>Test 2 Input</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="dv">4</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="dv">1</span></span></code></pre></div>
+<p>Output:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="st">&#39;O&#39;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="st">&#39;O&#39;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="st">&#39;O&#39;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="st">&#39;O&#39;</span></span></code></pre></div>
+<p>Break it down</p>
+<p>//we are given the height and width //we can use the Array().fill() function to fill an array with 'O's //and convert back to a string with join() //we can use a for loop to limit the amount of times we print to the console</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">const</span> height <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="kw">const</span> width <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="cf">for</span>(<span class="kw">let</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> height<span class="op">;</span> i<span class="op">++</span>){</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Array</span>(width)<span class="op">.</span><span class="fu">fill</span>(<span class="st">&#39;O&#39;</span>)<span class="op">.</span><span class="fu">join</span>(<span class="st">&#39;&#39;</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Output:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="st">&#39;OOOOO&#39;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="st">&#39;OOOOO&#39;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="st">&#39;OOOOO&#39;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="st">&#39;OOOOO&#39;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="st">&#39;OOOOO&#39;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="st">&#39;OOOOO&#39;</span></span></code></pre></div>
  </div> 

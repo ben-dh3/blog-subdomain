@@ -110,4 +110,37 @@ MathJax = {
 <br> <br> <br>
 <title> Codingame Question 11 </title>
 
+<h3 id="the-following-is-a-question-from-codingame-clash-of-code">The following is a question from codingame, clash of code:</h3>
+<h3 id="given-an-input-string-s-return-the-character-given-by-the-average-of-the-ascii-values-of-all-characters-in-the-string.">Given an input string s, return the character given by the average of the ASCII values of all characters in the string.</h3>
+<h3 id="s-can-contain-any-ascii-characters-upper-case-letters-lower-case-letters-spaces-or-symbols.">s can contain any ASCII characters, upper case letters, lower case letters, spaces or symbols.</h3>
+<h3 id="if-the-average-value-is-a-float-round-down-floor.">If the average value is a float, round down (floor).</h3>
+<h3 id="input">Input</h3>
+<h3 id="line-1-integer-len_s---length-of-s">Line 1: integer len_s - length of s</h3>
+<h3 id="line-2-string-s---the-string-to-find-the-average-ascii-value-of.">Line 2: string s - the string to find the average ASCII value of.</h3>
+<h3 id="output">Output</h3>
+<h3 id="the-character-associated-with-the-average-ascii-value-of-the-string-s">the character associated with the average ASCII value of the string s</h3>
+<h3 id="constraints">Constraints</h3>
+<h3 id="len_s-50">1 &lt;= len_s &lt;= 50</h3>
+<h3 id="example">Example</h3>
+<h3 id="input-1">Input</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="st">&quot;5&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="st">&quot;hello&quot;</span></span></code></pre></div>
+<h3 id="output-1">Output</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="st">&quot;j&quot;</span></span></code></pre></div>
+<h1 id="break-it-down">Break it down</h1>
+<ul>
+<li>we can loop through the string ‘s' and add the ASCII values to total</li>
+<li>then calculate the average with the length given ‘lenS'</li>
+<li>return the letter from the average ASCII value using string.fromCharCode</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">const</span> lenS <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="kw">const</span> s <span class="op">=</span> <span class="st">&quot;hello&quot;</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">let</span> total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="cf">for</span>(<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;=</span> s<span class="op">.</span><span class="at">length</span><span class="dv">-1</span><span class="op">;</span> i<span class="op">++</span>){</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    total <span class="op">+=</span> s<span class="op">.</span><span class="fu">charCodeAt</span>(i)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="kw">let</span> average <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(total <span class="op">/</span> lenS)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">String</span><span class="op">.</span><span class="fu">fromCharCode</span>(average))</span></code></pre></div>
+<h3 id="output-2">Output</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="st">&quot;j&quot;</span></span></code></pre></div>
  </div> 
